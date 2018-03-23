@@ -7,7 +7,7 @@ import javax.swing.*;
 
 public class tortoise {
     public static void main(String[] args) {
-        JFrame w=new JFrame("乌龟游啊游");
+        JFrame w=new JFrame("乌龟，乌龟游啊游");
         w.setSize(1720, 768);
         w.setBackground(Color.LIGHT_GRAY);
         Mypan mp=new Mypan();

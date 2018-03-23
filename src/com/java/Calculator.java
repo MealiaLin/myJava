@@ -16,7 +16,7 @@ import javax.swing.JTextField;
  */
 public class Calculator extends JFrame implements ActionListener {
     /** 计算器上的键的显示名字 */
-    private final String[] KEYS = { "7", "8", "9", "/", "sqrt", "4", "5", "6",
+    private final String[] KEYS = { "7", "8", "9", "/", "√", "4", "5", "6",
             "*", "%", "1", "2", "3", "-", "1/x", "0", "+/-", ".", "+", "=" };
     /** 计算器上的功能键的显示名字 */
     private final String[] COMMAND = { "Backspace", "CE", "C" };
@@ -249,7 +249,7 @@ public class Calculator extends JFrame implements ActionListener {
         } else if (operator.equals("*")) {
             // 乘法运算
             resultNum *= getNumberFromText();
-        } else if (operator.equals("sqrt")) {
+        } else if (operator.equals("√")) {
             // 平方根运算
             resultNum = Math.sqrt(resultNum);
         } else if (operator.equals("%")) {

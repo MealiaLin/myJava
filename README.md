@@ -14,3 +14,24 @@
     
     2、也可使用eclipse和idea之类的开发工具创建简单的java工程，把相关类引进去单独运行即可
    
+### 文件
+    
+   
+        ├── src                            源代码
+        │    ├── java                      常用的java工具类方法
+        │    │   ├── Calculator.java       计算器操作类
+        │    │   ├── CopyFile.java         文件复制操作类
+        │    │   ├── dateCalculate.java    日期计算操作类
+        │    │   ├── FrameDemo.java        窗体demo
+        │    │   ├── helloWorld.java       
+        │    │   ├── listUtils.java        list相关操作类
+        │    │   ├── tortoise.java         动态小乌龟
+        │    │   ├── ...
+        │    ├── snake                     贪吃蛇小游戏
+        │    │   ├── ...
+        │    ├── suanfa                    常用算法java代码
+        │    │   ├── Sort.java             排序算法
+        │    │   ├── ...
+        ├── README.md                      项目描述
+        └──
+   

@@ -30,6 +30,11 @@
         │    ├── snake                     贪吃蛇小游戏
         │    │   ├── ...
         │    ├── suanfa                    常用算法java代码
+        │    │   ├── Fibonacci.java        斐波那契数列
+        │    │   ├── Hanoit.java           汉诺塔问题
+        │    │   ├── HanxinDianbing.java   韩信点兵
+        │    │   ├── Multi.java            乘法口诀
+        │    │   ├── NumAssemble.java      数字组合（百钱买鸡问题）
         │    │   ├── Sort.java             排序算法
         │    │   ├── ...
         ├── README.md                      项目描述

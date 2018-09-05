@@ -1,7 +1,7 @@
 package com.suanfa;
 
 /**
- * 汉诺塔问题
+ * 汉诺塔问题：n个盘子，移动次数：2^n-1次
  * @author linyimin
  */
 public class Hanoit {

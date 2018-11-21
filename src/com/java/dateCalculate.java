@@ -1,11 +1,10 @@
 package com.java;
 
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 /**
  * 日期操作
@@ -20,8 +19,46 @@ public class dateCalculate {
 
         String fridayDate = getDay("2018-04-17","yyyy-MM-dd", true, 5);
         System.out.println(fridayDate);
+
+
+        String a = "2018-11-16 10:30:00";
+        String b = "2018-11-18 10:00:00";
+        String c = getDistanceOfTwoStringDate(a,b);
+        System.out.println(c);
+
+        System.out.println(getAfterDate("2018-11-16 10:30:00", 20));
+
+        System.out.println(compareDate("2018-11-16 10:30:00", "2018-11-18 10:00:00","yyyy-MM-dd HH:mm:ss"));
     }
 
+
+    private static boolean compareDate(String time1, String time2, String format) throws ParseException {
+        SimpleDateFormat sdf=new SimpleDateFormat(format);
+        //将字符串形式的时间转化为Date类型的时间
+        Date a=sdf.parse(time1);
+        Date b=sdf.parse(time2);
+        //Date类的一个方法，如果a早于b返回true，否则返回false
+        if(a.before(b)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private static String getAfterDate(String datetime, int days){
+        // 时间表示格式可以改变，yyyyMMdd需要写例如20160523这种形式的时间
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        // 将字符串的日期转为Date类型，ParsePosition(0)表示从第一个字符开始解析
+        Date date = sdf.parse(datetime, new ParsePosition(0));
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        // add方法中的第二个参数n中，正数表示该日期后n天，负数表示该日期的前n天
+        calendar.add(Calendar.DATE, days);
+        Date date1 = calendar.getTime();
+        String out = sdf.format(date1);
+
+        return out;
+    }
 
     /**
      * 获得某个日期周一到周日的日期列表
@@ -89,6 +126,30 @@ public class dateCalculate {
         String targetDay = list.get(dayNum - 1);
 
         return targetDay;
+    }
+
+    /**
+     * 获取两个日期之间的天数
+     *
+     * @param before
+     * @param after
+     * @return
+     * @throws ParseException
+     */
+    public static String getDistanceOfTwoStringDate(String before, String after) throws ParseException {
+        DateFormat fmt =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date beforeDate;
+        Date afterDate;
+
+        beforeDate = fmt.parse(before);
+        afterDate = fmt.parse(after);
+        long beforeTime = beforeDate.getTime();
+        long afterTime = afterDate.getTime();
+        long day = (afterTime - beforeTime) / (1000 * 60 * 60 * 24);
+        long hour = (afterTime - beforeTime) / (1000 * 60 * 60);
+        long min = (afterTime - beforeTime) / (1000 * 60);
+
+        return String.valueOf(hour);
     }
 
 
